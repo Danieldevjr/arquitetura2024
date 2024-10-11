@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input, button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        #resultado {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Conversor de Celsius para Fahrenheit</h1>
+        <label for="celsius">Digite a temperatura em Celsius:</label>
+        <input type="number" id="celsius" placeholder="0">
+        <button onclick="converter()">Converter</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function converter() {
+            // Lógica de conversão aqui
+            const celsiusInput = document.getElementById('celsius');
+            const celsiusValue = parseFloat(celsiusInput.value);
+            const fahrenheitValue = (celsiusValue * 9/5) + 32;
+            document.getElementById('resultado').textContent = `${celsiusValue}°C equivale a ${fahrenheitValue}°F`;
+        }
+    </script>
+</body>
+</html>
